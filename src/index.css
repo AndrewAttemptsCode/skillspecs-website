@@ -4,9 +4,9 @@
 }
 
 body {
-  line-height: 1.5;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img, picture, video, canvas, svg {
@@ -20,6 +20,7 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+  line-height: 1.5;
 }
 
 #root, #__next {
