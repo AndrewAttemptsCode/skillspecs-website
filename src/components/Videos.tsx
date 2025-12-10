@@ -11,6 +11,10 @@ type Video = {
 
 const PlayerContainer = styled.section`
   aspect-ratio: 16 / 9;
+
+  iframe {
+    border: none;
+  }
 `;
 
 const Videos = () => {
