@@ -58,7 +58,7 @@ const Videos = () => {
           height="100%"
           src={`https://www.youtube.com/embed/${currentVideo.videoId}`}
           title={currentVideo.title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="encrypted-media; picture-in-picture;"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
