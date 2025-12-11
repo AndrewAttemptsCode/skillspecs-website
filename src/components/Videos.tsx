@@ -17,6 +17,41 @@ const PlayerContainer = styled.section`
   }
 `;
 
+const LibraryContainer = styled.ul`
+  padding: 0.3rem 0.5rem;
+  display: flex;
+  gap: 1rem;
+  overflow: auto;
+  list-style: none;
+`;
+
+const LibraryItem = styled.li`
+
+  button {
+    padding: 0;
+    border: none;
+    background: none;
+    width: 60vw;
+    max-width: 300px;
+    cursor: pointer;
+  }
+  
+  img {
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 1rem;
+    line-height: 1;
+    margin-top: 0.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+`;
+
 const Videos = () => {
   const [currentVideo, setCurrentVideo] = useState<Video | null>(null);
   const [videoList, setVideoList] = useState<Video[]>([]);
@@ -64,11 +99,19 @@ const Videos = () => {
         ></iframe>
       </PlayerContainer>
 
-      <section>
+      <LibraryContainer>
         {videoList.map((video) => (
-          <img key={video.videoId} src={video.thumbnail} alt={video.title} />
+          <LibraryItem key={video.videoId}>
+            <button
+              onClick={() => setCurrentVideo(video)}
+              title={video.title}
+            >
+              <img src={video.thumbnail} alt={video.title} />
+              <h2>{video.title}</h2>
+            </button>
+          </LibraryItem>
         ))}
-      </section>
+      </LibraryContainer>
     </>
   );
 };
