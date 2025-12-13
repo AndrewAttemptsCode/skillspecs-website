@@ -9,20 +9,41 @@ type Video = {
   thumbnail: string;
 };
 
+const VideoContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    gap: 0.5rem;
+  }  
+`;
+
 const PlayerContainer = styled.section`
-  aspect-ratio: 16 / 9;
+  flex: 1;
 
   iframe {
     border: none;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
   }
 `;
 
 const LibraryContainer = styled.ul`
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0;
   display: flex;
   gap: 1rem;
-  overflow: auto;
+  overflow-x: auto;
   list-style: none;
+
+  @media (min-width: 1024px) {
+    flex-direction: column;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 `;
 
 const LibraryItem = styled.li`
@@ -31,7 +52,7 @@ const LibraryItem = styled.li`
     padding: 0;
     border: none;
     background: none;
-    width: 60vw;
+    width: 40vw;
     max-width: 300px;
     cursor: pointer;
   }
@@ -43,7 +64,8 @@ const LibraryItem = styled.li`
   }
 
   h2 {
-    font-size: 1rem;
+    font-size: clamp(0.725rem, 1.2vw, 1rem);
+    text-align: left;
     line-height: 1;
     margin-top: 0.5rem;
     text-overflow: ellipsis;
@@ -86,11 +108,9 @@ const Videos = () => {
   if (!currentVideo) return <p>Loading...</p>;
 
   return (
-    <>
+    <VideoContainer>
       <PlayerContainer>
         <iframe
-          width="100%"
-          height="100%"
           src={`https://www.youtube.com/embed/${currentVideo.videoId}`}
           title={currentVideo.title}
           allow="encrypted-media; picture-in-picture;"
@@ -112,7 +132,7 @@ const Videos = () => {
           </LibraryItem>
         ))}
       </LibraryContainer>
-    </>
+    </VideoContainer>
   );
 };
 
