@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Videos from "../components/Videos";
+import AppLayout from "../components/AppLayout";
 
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Videos />,
+    element: <AppLayout />,
   },
 ]);
 
