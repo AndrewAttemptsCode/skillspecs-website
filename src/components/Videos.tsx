@@ -10,18 +10,20 @@ type Video = {
 };
 
 const VideoContainer = styled.section`
+  position: fixed;
   display: flex;
   flex-direction: column;
-  height: 100%;
-
-  @media (min-width: 1024px) {
-    flex-direction: row;
-    gap: 0.5rem;
-  }  
+  justify-content: center;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  border: 2px solid cyan;
 `;
 
 const PlayerContainer = styled.section`
-  flex: 1;
+  width: min(90%, 800px);
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
 
   iframe {
     border: none;
@@ -32,18 +34,11 @@ const PlayerContainer = styled.section`
 `;
 
 const LibraryContainer = styled.ul`
-  padding: 0.3rem 0;
+  padding: 0.5rem 1rem;
   display: flex;
   gap: 1rem;
-  overflow-x: auto;
+  overflow: auto;
   list-style: none;
-
-  @media (min-width: 1024px) {
-    flex-direction: column;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
 `;
 
 const LibraryItem = styled.li`
