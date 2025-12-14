@@ -39,6 +39,11 @@ const LibraryContainer = styled.ul`
   gap: 1rem;
   overflow: auto;
   list-style: none;
+  max-width: 1000px;
+  margin: 0 auto;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
 `;
 
 const LibraryItem = styled.li`
