@@ -1,8 +1,10 @@
 import { createContext, useContext, useState } from "react";
 
+type Scenes = "videos"
+
 type AppContextTypes = {
-  activeScene: string | null;
-  updateScene: (value: string | null) => void;
+  activeScene: Scenes | null;
+  updateScene: (value: Scenes | null) => void;
 }
 
 type AppProviderProps = {
@@ -12,9 +14,9 @@ type AppProviderProps = {
 const AppContext = createContext<AppContextTypes | null>(null);
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-  const [activeScene, setActiveScene] = useState<string | null>(null);
+  const [activeScene, setActiveScene] = useState<Scenes | null>(null);
 
-  const updateScene = (value: string | null) => {
+  const updateScene = (value: Scenes | null) => {
     setActiveScene(value);
   };
 
