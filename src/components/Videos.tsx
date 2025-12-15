@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import ExitSceneButton from "./ExitSceneButton";
 
 type Video = {
   videoId: string;
@@ -109,6 +110,8 @@ const Videos = () => {
 
   return (
     <VideoContainer>
+      <ExitSceneButton />
+      
       <PlayerContainer>
         <iframe
           src={`https://www.youtube.com/embed/${currentVideo.videoId}`}
