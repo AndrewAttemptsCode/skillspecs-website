@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Videos from "./Videos";
-import { useState } from "react";
+import { useApp } from "../contexts/AppContext";
 
 const App = styled.main`
   height: 100vh;
@@ -24,13 +24,13 @@ const BgScreen = styled.div`
 `;
 
 const AppLayout = () => {
-  const [activeScene, setActiveScene] = useState<string | null>(null);
+  const { updateScene, activeScene } = useApp();
 
   return (
     <App>
       {activeScene && <BgScreen />}
       {activeScene === "videos" && <Videos />}
-      <button onClick={() => setActiveScene("videos")}>Videos</button>
+      <button onClick={() => updateScene("videos")}>Videos</button>
     </App>
   );
 };
