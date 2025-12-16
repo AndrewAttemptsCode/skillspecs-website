@@ -40,6 +40,7 @@ const LibraryContainer = styled.ul`
   gap: 1rem;
   overflow: auto;
   list-style: none;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
