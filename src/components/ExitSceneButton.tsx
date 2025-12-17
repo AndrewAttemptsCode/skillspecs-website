@@ -9,6 +9,9 @@ const Button = styled.button`
   aspect-ratio: 1 / 1;
   border-radius: 4rem;
   padding: 0.5rem;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: transform 0.3s ease;
 
@@ -18,6 +21,16 @@ const Button = styled.button`
 
   svg {
     transform: rotate(45deg);
+    color: inherit;
+    fill: #FFFFFF;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 4px 4px rgb(4, 170, 109);
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 `;
 
