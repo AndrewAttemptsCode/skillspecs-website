@@ -83,8 +83,47 @@ const LibraryItem = styled.li`
   }
 `;
 
+const ControlButtonContainer = styled.section`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+`;
+
 const ControlButtonStyles = css`
   z-index: 5;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #FFFFFF;
+  background-color: rgba(4, 170, 109, 0.8);
+  font-weight: bold;
+  border: 2px solid rgb(4, 170, 109);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  outline: none;
+  user-select: none;
+
+  &:focus-visible {
+    box-shadow: 0 0 4px 4px rgb(4, 170, 109);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: rgb(4, 170, 109);
+    }
+  }
+
+  &:disabled {
+    background-color: rgba(4, 170, 109, 0.4);
+    pointer-events: none;
+  }
 `;
 
 const ControlButtonPrev = styled.button`
@@ -169,19 +208,21 @@ const Videos = () => {
 
       </LibraryContainer>
 
-      <ControlButtonPrev
+      <ControlButtonContainer>
+        <ControlButtonPrev
         onClick={handlePrev}
-        disabled={itemIndex === 0}
-      >
+          disabled={itemIndex === 0}
+        >
         Prev
-      </ControlButtonPrev>
+        </ControlButtonPrev>
 
-      <ControlButtonNext
-        onClick={handleNext}
-        disabled={itemIndex === videoList.length - 1}
-      >
-        Next
-      </ControlButtonNext>
+        <ControlButtonNext
+          onClick={handleNext}
+          disabled={itemIndex === videoList.length - 1}
+        >
+          Next
+        </ControlButtonNext>
+      </ControlButtonContainer>
 
     </VideoContainer>
   );
