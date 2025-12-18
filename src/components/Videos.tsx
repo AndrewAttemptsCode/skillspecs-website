@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import ExitSceneButton from "./ExitSceneButton";
 
 type Video = {
@@ -10,6 +10,17 @@ type Video = {
   thumbnail: string;
 };
 
+const LoadIn = keyframes`
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
+
 const VideoContainer = styled.section`
   position: fixed;
   display: flex;
@@ -19,13 +30,13 @@ const VideoContainer = styled.section`
   height: 100vh;
   height: 100dvh;
   width: 100%;
-  border: 2px solid cyan;
 `;
 
 const PlayerContainer = styled.section`
   width: min(90%, 800px);
   aspect-ratio: 16 / 9;
   margin: 0 auto;
+  animation: ${LoadIn} 1s ease;
 
   iframe {
     border: none;
@@ -45,6 +56,7 @@ const LibraryContainer = styled.section`
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   scrollbar-width: none;
+  animation: ${LoadIn} 1s ease;
 `;
 
 const LibraryTrack = styled.ul<{ $itemIndex: number }>`
@@ -66,7 +78,7 @@ const LibraryItem = styled.li`
     cursor: pointer;
     outline: none;
     transition: transform 0.3s ease;
-    
+
     &:active {
       transform: scale(0.9);
     }
@@ -109,6 +121,7 @@ const ControlButtonContainer = styled.section`
     display: flex;
     justify-content: center;
     gap: 1rem;
+    animation: ${LoadIn} 1s ease;
   }
 `;
 
