@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import ExitSceneButton from "./ExitSceneButton";
+import PlayerSkeleton from "./PlayerSkeleton";
 
 type Video = {
   videoId: string;
@@ -206,20 +207,22 @@ const Videos = () => {
     setItemIndex((prev) => Math.min(prev + 1, videoList.length - 1));
   };
 
-  if (!currentVideo) return <p>Loading...</p>;
-
   return (
     <VideoContainer>
       <ExitSceneButton />
       
       <PlayerContainer>
-        <iframe
-          src={`https://www.youtube.com/embed/${currentVideo.videoId}`}
-          title={currentVideo.title}
-          allow="encrypted-media; picture-in-picture;"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+        {!currentVideo ? (
+          <PlayerSkeleton />
+        ) : (
+          <iframe
+            src={`https://www.youtube.com/embed/${currentVideo.videoId}`}
+            title={currentVideo.title}
+            allow="encrypted-media; picture-in-picture;"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        )}
       </PlayerContainer>
 
       <LibraryContainer>
