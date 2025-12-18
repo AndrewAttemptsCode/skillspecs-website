@@ -63,6 +63,11 @@ const LibraryItem = styled.li`
     background: none;
     width: 200px;
     cursor: pointer;
+    outline: none;
+
+    &:focus-visible {
+      box-shadow: 0 0 4px 4px rgb(4, 170, 109);
+    }
   }
   
   img {
