@@ -15,6 +15,7 @@ const VideoContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
   height: 100vh;
   height: 100dvh;
   width: 100%;
@@ -64,9 +65,21 @@ const LibraryItem = styled.li`
     width: 200px;
     cursor: pointer;
     outline: none;
+    transition: transform 0.3s ease;
+    
+    &:active {
+      transform: scale(0.9);
+    }
 
     &:focus-visible {
       box-shadow: 0 0 4px 4px rgb(4, 170, 109);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover img,
+      &:focus-visible img {
+        transform: translateY(-0.5rem);
+      }
     }
   }
   
@@ -74,6 +87,7 @@ const LibraryItem = styled.li`
     aspect-ratio: 16 / 9;
     border-radius: 8px;
     object-fit: cover;
+    transition: transform 0.3s ease;
   }
 
   h2 {
