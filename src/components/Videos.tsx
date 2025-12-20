@@ -13,11 +13,9 @@ type Video = {
 
 const LoadIn = keyframes`
   0% {
-    transform: scale(0);
     opacity: 0;
   }
   100% {
-    transform: scale(1);
     opacity: 1;
   }
 `;
@@ -37,7 +35,7 @@ const PlayerContainer = styled.section`
   width: min(90%, 800px);
   aspect-ratio: 16 / 9;
   margin: 0 auto;
-  animation: ${LoadIn} 1s ease;
+  animation: ${LoadIn} 1s ease forwards;
 
   iframe {
     border: none;
@@ -57,7 +55,7 @@ const LibraryContainer = styled.section`
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   scrollbar-width: none;
-  animation: ${LoadIn} 1s ease;
+  animation: ${LoadIn} 1s ease forwards;
 `;
 
 const LibraryTrack = styled.ul<{ $itemIndex: number }>`
@@ -122,7 +120,7 @@ const ControlButtonContainer = styled.section`
     display: flex;
     justify-content: center;
     gap: 1rem;
-    animation: ${LoadIn} 1s ease;
+    animation: ${LoadIn} 1s ease forwards;
   }
 `;
 
