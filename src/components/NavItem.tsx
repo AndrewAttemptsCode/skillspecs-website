@@ -20,11 +20,11 @@ const NavItem = ({ item }: ItemProps) => {
       <img
         src={stone}
         alt=""
-        className={`w-16 group-hover:brightness-110 ${transitionClasses}`}
+        className={`w-16 group-hover:brightness-110 group-focus:brightness-110 ${transitionClasses}`}
       />
       <div className="absolute inset-0 flex items-center justify-center p-4">
         <Icon
-          className={`size-full group-hover:scale-110 ${transitionClasses} ${styles}`}
+          className={`size-full group-hover:scale-110 ${transitionClasses} ${styles} group-focus:scale-110`}
         />
       </div>
     </NavLink>
