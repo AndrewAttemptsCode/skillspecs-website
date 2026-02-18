@@ -3,6 +3,7 @@ import HomePage from "../pages/HomePage";
 import SiteLayout from "../components/SiteLayout";
 import VideosPage from "../pages/VideosPage";
 import AboutPage from "../pages/AboutPage";
+import SocialsPage from "../pages/SocialsPage";
 
 const routes = createBrowserRouter([
   {
@@ -19,14 +20,18 @@ const routes = createBrowserRouter([
       {
         path: "livestream",
         loader: () => {
-          window.location.href="https://www.twitch.tv/skillspecs";
+          window.location.replace("https://www.twitch.tv/skillspecs");
           return null;
         },
       },
       {
+        path: "socials",
+        element: <SocialsPage />,
+      },
+      {
         path: "about",
         element: <AboutPage />,
-      }
+      },
     ],
   },
 ]);
