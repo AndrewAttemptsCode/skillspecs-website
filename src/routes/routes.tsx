@@ -15,6 +15,13 @@ const routes = createBrowserRouter([
         path: "videos",
         element: <VideosPage />,
       },
+      {
+        path: "livestream",
+        loader: () => {
+          window.location.href="https://www.twitch.tv/skillspecs";
+          return null;
+        },
+      },
     ],
   },
 ]);
