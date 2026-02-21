@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import fetchVideos from "../api/videos";
 
-type Video = {
+export type Video = {
   videoId: string;
   title: string;
   description: string;
