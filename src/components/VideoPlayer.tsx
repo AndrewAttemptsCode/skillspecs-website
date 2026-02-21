@@ -30,17 +30,3 @@ const VideoPlayer = ({ video }: VideoProps) => {
 };
 
 export default VideoPlayer;
-
-// const PlayerContainer = styled.section`
-//   width: min(90%, 800px);
-//   aspect-ratio: 16 / 9;
-//   margin: 0 auto;
-//   animation: ${LoadIn} 1s ease forwards;
-
-//   iframe {
-//     border: none;
-//     height: 100%;
-//     width: 100%;
-//     border-radius: 8px;
-//   }
-// `;
