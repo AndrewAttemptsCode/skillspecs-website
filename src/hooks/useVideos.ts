@@ -27,7 +27,7 @@ const useVideos = () => {
       } finally {
         setLoading(false);
       }
-    }
+    };
     loadVideos();
   }, []);
 
