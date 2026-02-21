@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import stone from "../assets/images/stone_btn.png";
+import stone from "../assets/images/buttons/stone_btn.png";
 import type { NavListData } from "../data/NavList";
 
 type ItemProps = {
