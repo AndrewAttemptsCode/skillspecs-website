@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import stone from "../assets/images/buttons/stone_btn.png";
 import type { NavListData } from "../data/NavList";
 
@@ -7,9 +7,11 @@ type ItemProps = {
 };
 
 const NavItem = ({ item }: ItemProps) => {
-  const { path, label, Icon, styles } = item;
+  const { path, label, Icon, styles, active } = item;
+  const location = useLocation();
 
   const transitionClasses = "ease transition duration-300";
+  const selected = path === location.pathname;
 
   return (
     <NavLink
@@ -24,7 +26,7 @@ const NavItem = ({ item }: ItemProps) => {
       />
       <div className="absolute inset-0 flex items-center justify-center p-4">
         <Icon
-          className={`size-full group-hover:scale-110 ${transitionClasses} ${styles} group-focus-visible:scale-110`}
+          className={`size-full group-hover:scale-110 ${transitionClasses} ${styles} ${selected ? active : ""} group-focus-visible:scale-110`}
         />
       </div>
     </NavLink>
