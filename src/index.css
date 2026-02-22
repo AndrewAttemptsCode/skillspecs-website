@@ -2,5 +2,5 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: "Knewave", sans-sarif;
+  --font-heading: "Knewave", sans-serif;
 }
