@@ -5,7 +5,7 @@ import { FaHome, FaInfoCircle } from "react-icons/fa";
 
 export type NavListData = {
   id: number;
-  path: "/" | "videos" | "livestream" | "socials" | "about";
+  path: "/" | "/videos" | "/livestream" | "/socials" | "/about";
   label: string;
   Icon: IconType;
   styles: string;
@@ -23,7 +23,7 @@ const navList: NavListData[] = [
   },
   {
     id: 1,
-    path: "videos",
+    path: "/videos",
     label: "Videos",
     styles: "group-hover:fill-[#FF0000] group-focus-visible:fill-[#FF0000]",
     active: "fill-[#FF0000]",
@@ -31,7 +31,7 @@ const navList: NavListData[] = [
   },
   {
     id: 2,
-    path: "livestream",
+    path: "/livestream",
     label: "Livestream",
     styles: "group-hover:fill-[#9146FF] group-focus-visible:fill-[#9146FF]",
     active: "fill-[#9146FF]",
@@ -39,7 +39,7 @@ const navList: NavListData[] = [
   },
   {
     id: 3,
-    path: "socials",
+    path: "/socials",
     label: "Socials",
     styles: "group-hover:fill-blue-400 group-focus-visible:fill-blue-400",
     active: "fill-blue-400",
@@ -47,7 +47,7 @@ const navList: NavListData[] = [
   },
   {
     id: 4,
-    path: "about",
+    path: "/about",
     label: "About Skill Specs",
     styles: "group-hover:fill-gray-400 group-focus-visible:fill-gray-400",
     active: "fill-gray-400",

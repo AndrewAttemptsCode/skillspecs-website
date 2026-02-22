@@ -1,7 +1,7 @@
 import navList from "../data/NavList";
 import NavItem from "./NavItem";
 
-type Route = "/" | "videos" | "livestream" | "socials" | "about";
+type Route = "/" | "/videos" | "/livestream" | "/socials" | "/about";
 
 type NavProps = {
   selectedItems: Route[];
