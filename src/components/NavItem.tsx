@@ -7,24 +7,24 @@ type ItemProps = {
 };
 
 const NavItem = ({ item }: ItemProps) => {
-  const { label, Icon, styles } = item;
+  const { path, label, Icon, styles } = item;
 
   const transitionClasses = "ease transition duration-300";
 
   return (
     <NavLink
-      to={label}
+      to={path}
       title={label}
-      className="group relative block rounded-xl outline-none focus:ring-2 focus:ring-emerald-300"
+      className="group relative block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
     >
       <img
         src={stone}
         alt=""
-        className={`w-16 group-hover:brightness-110 group-focus:brightness-110 ${transitionClasses}`}
+        className={`w-16 group-hover:brightness-110 group-focus-visible:brightness-110 ${transitionClasses}`}
       />
       <div className="absolute inset-0 flex items-center justify-center p-4">
         <Icon
-          className={`size-full group-hover:scale-110 ${transitionClasses} ${styles} group-focus:scale-110`}
+          className={`size-full group-hover:scale-110 ${transitionClasses} ${styles} group-focus-visible:scale-110`}
         />
       </div>
     </NavLink>
