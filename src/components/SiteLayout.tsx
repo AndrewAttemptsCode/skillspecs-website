@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 
 const SiteLayout = () => {
   return (
-    <div>
+    <div className="bg-emerald-900">
       <header>
         <NavBar selectedItems={["/", "/videos", "/livestream", "/socials", "/about"]} orientation="horizontal" />
       </header>

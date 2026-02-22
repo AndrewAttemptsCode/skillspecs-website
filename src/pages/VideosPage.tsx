@@ -9,7 +9,7 @@ const VideosPage = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="min-h-dvh bg-emerald-900">
+    <div className="min-h-dvh">
       {selectedVideo && <VideoPlayer video={selectedVideo} />}
       {videos && <VideoList />}
     </div>
