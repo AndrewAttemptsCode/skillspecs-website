@@ -9,6 +9,7 @@ export type NavListData = {
   label: string;
   Icon: IconType;
   styles: string;
+  active: string;
 };
 
 const navList: NavListData[] = [
@@ -17,6 +18,7 @@ const navList: NavListData[] = [
     path: "/",
     label: "Home",
     styles: "group-hover:fill-[#7FBF3F] group-focus-visible:fill-[#7FBF3F]",
+    active: "fill-[#7FBF3F]",
     Icon: FaHome,
   },
   {
@@ -24,6 +26,7 @@ const navList: NavListData[] = [
     path: "videos",
     label: "Videos",
     styles: "group-hover:fill-[#FF0000] group-focus-visible:fill-[#FF0000]",
+    active: "fill-[#FF0000]",
     Icon: FaYoutube,
   },
   {
@@ -31,6 +34,7 @@ const navList: NavListData[] = [
     path: "livestream",
     label: "Livestream",
     styles: "group-hover:fill-[#9146FF] group-focus-visible:fill-[#9146FF]",
+    active: "fill-[#9146FF]",
     Icon: FaTwitch,
   },
   {
@@ -38,6 +42,7 @@ const navList: NavListData[] = [
     path: "socials",
     label: "Socials",
     styles: "group-hover:fill-blue-400 group-focus-visible:fill-blue-400",
+    active: "fill-blue-400",
     Icon: IoMdShare,
   },
   {
@@ -45,6 +50,7 @@ const navList: NavListData[] = [
     path: "about",
     label: "About Skill Specs",
     styles: "group-hover:fill-gray-400 group-focus-visible:fill-gray-400",
+    active: "fill-gray-400",
     Icon: FaInfoCircle,
   },
 ];
