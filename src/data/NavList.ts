@@ -5,7 +5,7 @@ import { FaHome, FaInfoCircle } from "react-icons/fa";
 
 export type NavListData = {
   id: number;
-  path: string;
+  path: "/" | "videos" | "livestream" | "socials" | "about";
   label: string;
   Icon: IconType;
   styles: string;
