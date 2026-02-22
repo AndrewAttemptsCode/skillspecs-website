@@ -1,11 +1,22 @@
 import navList from "../data/NavList";
 import NavItem from "./NavItem";
 
-const NavBar = () => {
+type Route = "/" | "videos" | "livestream" | "socials" | "about";
+
+type NavProps = {
+  selectedItems: Route[];
+}
+
+const NavBar = ({ selectedItems }: NavProps) => {
+
+  const list = selectedItems
+  ? navList.filter((item) => selectedItems.includes(item.path))
+  : navList;
+
   return (
     <nav>
       <ul className="flex flex-col gap-2">
-        {navList.map((item) => (
+        {list.map((item) => (
           <li key={item.id}>
             <NavItem item={item} />
           </li>
