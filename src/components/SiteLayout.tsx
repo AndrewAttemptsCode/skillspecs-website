@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 const SiteLayout = () => {
   return (
     <div className="bg-emerald-900">
-      <header>
+      <header className="flex justify-between items-center p-4">
         <NavBar selectedItems={["/", "/videos", "/livestream", "/socials", "/about"]} orientation="horizontal" />
       </header>
       <main>
