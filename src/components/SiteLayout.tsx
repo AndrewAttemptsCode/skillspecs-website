@@ -9,7 +9,7 @@ const SiteLayout = () => {
   return (
     <div
       className="bg-emerald-900 bg-no-repeat bg-center bg-cover bg-fixed flex flex-col min-h-dvh"
-      style={{ backgroundImage: `url(${bg})` }}
+      style={{ backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(${bg})` }}
     >
       <header className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 sm:gap-0 p-2 sm:p-4">
         <Logo />
