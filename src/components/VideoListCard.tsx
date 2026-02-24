@@ -15,7 +15,7 @@ const VideoListCard = ({ video, selectedVideo }: CardProps) => {
       <img
         src={mask} alt=""
         className="absolute inset-0 size-full"
-        style={{ filter: highlight ? ("drop-shadow(0 0 2px gold) drop-shadow(0 0 3px gold) drop-shadow(0 0 4px gold)") : "" }}
+        style={{ filter: highlight ? ("drop-shadow(0 0 1px gold) drop-shadow(0 0 1px gold) drop-shadow(0 0 1px gold)") : "" }}
       />
       <img 
         src={video.thumbnail} alt=""
