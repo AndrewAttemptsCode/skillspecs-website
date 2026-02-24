@@ -6,7 +6,7 @@ const HomePage = () => {
 
   return (
     <div
-      className="flex min-h-dvh justify-center lg:justify-end p-4 bg-cover bg-center bg-no-repeat"
+      className="flex min-h-dvh justify-center bg-cover bg-center bg-no-repeat p-4 lg:justify-end"
       style={{
         backgroundImage: `
           url(${bg}),
@@ -20,7 +20,10 @@ const HomePage = () => {
         `,
       }}
     >
-      <NavBar selectedItems={["/videos", "/livestream", "/socials", "/about"]} orientation="horizontal" />
+      <NavBar
+        selectedItems={["/videos", "/livestream", "/socials", "/about"]}
+        orientation="horizontal"
+      />
     </div>
   );
 };

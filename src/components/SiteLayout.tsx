@@ -8,12 +8,17 @@ const SiteLayout = () => {
 
   return (
     <div
-      className="bg-emerald-900 bg-no-repeat bg-center bg-cover bg-fixed flex flex-col min-h-dvh"
-      style={{ backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(${bg})` }}
+      className="flex min-h-dvh flex-col bg-emerald-900 bg-cover bg-fixed bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(${bg})`,
+      }}
     >
-      <header className="flex flex-col sm:flex-row sm:justify-between items-center gap-2 sm:gap-0 p-2 sm:p-4">
+      <header className="flex flex-col items-center gap-2 p-2 sm:flex-row sm:justify-between sm:gap-0 sm:p-4">
         <Logo />
-        <NavBar selectedItems={["/", "/videos", "/livestream", "/socials", "/about"]} orientation="horizontal" />
+        <NavBar
+          selectedItems={["/", "/videos", "/livestream", "/socials", "/about"]}
+          orientation="horizontal"
+        />
       </header>
       <main className="flex-1">
         <Outlet />

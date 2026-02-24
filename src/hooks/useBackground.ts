@@ -7,7 +7,7 @@ type Routes = "/" | "/videos" | "/livestream" | "/socials" | "/about";
 const useBackground = () => {
   const location = useLocation();
   const pathname = location.pathname;
-  
+
   const backgrounds: Record<Routes, string> = {
     "/": bgHome,
     "/videos": bgVideos,

@@ -1,7 +1,7 @@
 const Logo = () => {
   return (
-    <div className="p-3 sm:p-4 bg-emerald-950 rounded-2xl">
-      <h1 className="font-heading text-[#7FBF3F] text-2xl">Skill Specs</h1>
+    <div className="rounded-2xl bg-emerald-950 p-3 sm:p-4">
+      <h1 className="font-heading text-2xl text-[#7FBF3F]">Skill Specs</h1>
     </div>
   );
 };
