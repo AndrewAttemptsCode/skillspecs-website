@@ -1,4 +1,5 @@
 import type { Video } from "../hooks/useVideos";
+import mask from "../assets/images/masks/button_brush1.png";
 
 type CardProps = {
   video: Video;
@@ -7,7 +8,11 @@ type CardProps = {
 const VideoListCard = ({ video }: CardProps) => {
   return (
     <li>
-      <img className="aspect-video" src={video.thumbnail} alt="" />
+      <img 
+        src={video.thumbnail} alt=""
+        className="aspect-video mask-size-[100%_100%] mask-center mask-no-repeat"
+        style={{ maskImage: `url(${mask})` }}
+      />
     </li>
   );
 };
