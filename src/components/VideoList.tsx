@@ -9,7 +9,7 @@ const VideoList = ({ videos }: ListProps) => {
   return (
     <div>
       <section className="w-[90%] max-w-330 p-4 mx-auto bg-white/25">
-        <h2 className="font-heading text-[#7FBF3F] p-2 bg-black/70 text-2xl mb-4">Latest Videos...</h2>
+        <h2 className="font-heading text-[#7FBF3F] p-2 bg-black/70 text-xl md:text-2xl mb-4">Latest Videos...</h2>
         <ul className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
           {videos.map(video => (
             <VideoListCard key={video.videoId} video={video}/>
