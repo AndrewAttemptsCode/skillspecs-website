@@ -1,11 +1,20 @@
 import type { Video } from "../hooks/useVideos";
 import border from "../assets/images/borders/border.webp";
+import { useEffect } from "react";
 
 type VideoProps = {
   video: Video;
 };
 
 const VideoPlayer = ({ video }: VideoProps) => {
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }, [video]);
+
   return (
     <div className="flex justify-center py-4">
       <section
