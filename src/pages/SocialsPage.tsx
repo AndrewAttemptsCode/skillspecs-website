@@ -1,7 +1,5 @@
 const SocialsPage = () => {
-  return (
-    <div>socials page</div>
-  );
+  return <div>socials page</div>;
 };
 
 export default SocialsPage;
