@@ -31,7 +31,11 @@ const useVideos = () => {
     loadVideos();
   }, []);
 
-  return { videos, selectedVideo, loading, error };
+  const updateSelected = (videoDetails: Video) => {
+    setSelectedVideo(videoDetails);
+  };
+
+  return { videos, selectedVideo, updateSelected, loading, error };
 };
 
 export default useVideos;
