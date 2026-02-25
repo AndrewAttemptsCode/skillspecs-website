@@ -8,17 +8,16 @@ type VideoProps = {
 };
 
 const VideoPlayer = ({ video }: VideoProps) => {
-
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
-    })
+      behavior: "smooth",
+    });
   }, [video]);
 
   return (
     <div>
-      <div className="w-[90%] max-w-5xl mx-auto py-4">
+      <div className="mx-auto w-[90%] max-w-5xl py-4">
         {!video ? (
           <VideoPlayerSkeleton />
         ) : (

@@ -9,8 +9,12 @@ const VideosPage = () => {
 
   return (
     <div>
-      <VideoPlayer video={selectedVideo}/>
-      <VideoList videos={videos} selectedVideo={selectedVideo} updateSelected={updateSelected} />
+      <VideoPlayer video={selectedVideo} />
+      <VideoList
+        videos={videos}
+        selectedVideo={selectedVideo}
+        updateSelected={updateSelected}
+      />
     </div>
   );
 };
