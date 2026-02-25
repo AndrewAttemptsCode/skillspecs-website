@@ -12,10 +12,10 @@ const VideoListCard = ({ video, selectedVideo, updateSelected }: CardProps) => {
   const highlight = video.videoId === selectedVideo?.videoId;
 
   return (
-    <li className="relative">
+    <li className="relative" title={video.title}>
       <button
         onClick={() => updateSelected(video)}
-        className="cursor-pointer"
+        className="cursor-pointer outline-0 focus-visible:ring-1 rounded-2xl focus-visible:ring-offset-2 focus-visible:ring-offset-transparent focus-visible:ring-[#7FBF3F]"
       >
         <img
           src={mask} alt=""
@@ -24,7 +24,7 @@ const VideoListCard = ({ video, selectedVideo, updateSelected }: CardProps) => {
         />
         <img 
           src={video.thumbnail} alt=""
-          className="aspect-video mask-size-[100%_100%] mask-center mask-no-repeat"
+          className="aspect-video object-cover object-center mask-size-[100%_100%] mask-center mask-no-repeat"
           style={{ maskImage: `url(${mask})` }}
         />
       </button>
