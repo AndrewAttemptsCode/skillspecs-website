@@ -10,7 +10,7 @@ const VideosPage = () => {
   return (
     <div>
       <VideoPlayer video={selectedVideo}/>
-      {videos && <VideoList videos={videos} selectedVideo={selectedVideo} updateSelected={updateSelected} />}
+      <VideoList videos={videos} selectedVideo={selectedVideo} updateSelected={updateSelected} />
     </div>
   );
 };
