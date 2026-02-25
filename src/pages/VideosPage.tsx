@@ -3,7 +3,7 @@ import VideoPlayer from "../components/VideoPlayer";
 import useVideos from "../hooks/useVideos";
 
 const VideosPage = () => {
-  const { videos, selectedVideo, loading, error } = useVideos();
+  const { videos, selectedVideo, updateSelected, loading, error } = useVideos();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
@@ -11,7 +11,7 @@ const VideosPage = () => {
   return (
     <div>
       {selectedVideo && <VideoPlayer video={selectedVideo} />}
-      {videos && <VideoList videos={videos} selectedVideo={selectedVideo} />}
+      {videos && <VideoList videos={videos} selectedVideo={selectedVideo} updateSelected={updateSelected} />}
     </div>
   );
 };
