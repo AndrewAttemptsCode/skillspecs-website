@@ -13,7 +13,10 @@ const VideoListCard = ({ video, selectedVideo, updateSelected }: CardProps) => {
 
   return (
     <li className="relative">
-      <button onClick={() => updateSelected(video)}>
+      <button
+        onClick={() => updateSelected(video)}
+        className="cursor-pointer"
+      >
         <img
           src={mask} alt=""
           className="absolute inset-0 size-full"
