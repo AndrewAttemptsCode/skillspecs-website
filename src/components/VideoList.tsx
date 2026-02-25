@@ -1,8 +1,9 @@
 import type { Video } from "../hooks/useVideos";
 import VideoListCard from "./VideoListCard";
+import VideoListSkeleton from "./VideoListSkeleton";
 
 type ListProps = {
-  videos: Video[];
+  videos: Video[] | null;
   selectedVideo: Video | null;
   updateSelected: (videoDetails: Video) => void;
 }
@@ -11,12 +12,18 @@ const VideoList = ({ videos, selectedVideo, updateSelected }: ListProps) => {
   return (
     <div>
       <section className="w-[90%] max-w-330 p-4 mx-auto bg-white/10 backdrop-blur-sm">
-        <h2 className="font-heading text-[#7FBF3F] p-2 bg-black/40 backdrop-blur-sm text-xl md:text-2xl mb-4">Latest Videos...</h2>
-        <ul className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
-          {videos.map(video => (
-            <VideoListCard key={video.videoId} video={video} selectedVideo={selectedVideo} updateSelected={updateSelected} />
-          ))}
-        </ul>
+        {!videos ? (
+          <VideoListSkeleton />
+        ) : (
+          <>
+            <h2 className="font-heading text-[#7FBF3F] p-2 bg-black/40 backdrop-blur-sm text-xl md:text-2xl mb-4">Latest Videos...</h2>
+            <ul className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
+              {videos.map(video => (
+                <VideoListCard key={video.videoId} video={video} selectedVideo={selectedVideo} updateSelected={updateSelected} />
+              ))}
+            </ul>
+          </>
+        )}
       </section>
     </div>
   );
