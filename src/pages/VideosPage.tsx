@@ -1,3 +1,4 @@
+import ErrorDisplay from "../components/ErrorDisplay";
 import VideoList from "../components/VideoList";
 import VideoPlayer from "../components/VideoPlayer";
 import useVideos from "../hooks/useVideos";
@@ -5,7 +6,7 @@ import useVideos from "../hooks/useVideos";
 const VideosPage = () => {
   const { videos, selectedVideo, updateSelected, error } = useVideos();
 
-  if (error) return <p>{error}</p>;
+  if (error) return <ErrorDisplay error={error} />
 
   return (
     <div>
