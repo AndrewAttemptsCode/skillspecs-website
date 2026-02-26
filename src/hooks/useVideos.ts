@@ -22,7 +22,11 @@ const useVideos = () => {
         setVideos(data);
         setSelectedVideo(data[0]);
       } catch (err) {
-        console.error("fetchVideos error: ", err);
+        if (err instanceof Error) {
+          console.error(err.message);
+        } else {
+          console.error("Unknown Error:", err);
+        }
         setError("Failed to fetch videos. Please try again.");
       } finally {
         setLoading(false);
