@@ -9,7 +9,7 @@ const VideosPage = () => {
   if (error) return <ErrorDisplay error={error} />
 
   return (
-    <div>
+    <div className="flex-1 flex flex-col">
       <VideoPlayer video={selectedVideo} />
       <VideoList
         videos={videos}
