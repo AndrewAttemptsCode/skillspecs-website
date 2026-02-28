@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import bgError from "../assets/images/backgrounds/bg_error.webp";
 
 type ErrorProps = {
   error: string;
@@ -45,8 +46,12 @@ const ErrorDisplay = ({ error }: ErrorProps) => {
   }
 
   return (
-    <div>
-      <section>
+    <div className="flex-1 flex justify-center items-center">
+      <section className="w-[90%] max-w-125 bg-amber-100">
+        <div
+          className="aspect-video bg-size-[100%_100%] bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${bgError}), linear-gradient(to bottom, #ff000055, red)` }}
+        />
         <h2>{message}</h2>
         {waiting && <p>Retrying in {countDown}...</p>}
         <button onClick={handleRetry} disabled={waiting || retries === 3}>Try again</button>
