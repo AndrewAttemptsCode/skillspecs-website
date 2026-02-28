@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import bgError from "../assets/images/backgrounds/bg_error.webp";
+import thinkSprite from "../assets/images/sprites/think_sprite.webp";
 
 type ErrorProps = {
   error: string;
@@ -49,9 +50,21 @@ const ErrorDisplay = ({ error }: ErrorProps) => {
     <div className="flex-1 flex justify-center items-center">
       <section className="w-[90%] max-w-125 bg-amber-100">
         <div
-          className="aspect-video bg-size-[100%_100%] bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${bgError}), linear-gradient(to bottom, #ff000055, red)` }}
-        />
+          className="relative aspect-video bg-size-[100%_100%] bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${bgError}), linear-gradient(to bottom, #ff000055, #ff0000)` }}
+        >
+          <div 
+            className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-no-repeat animate-emote"
+            style={{
+              height: "auto",
+              width: "26%",
+              aspectRatio: "302 / 706",
+              backgroundImage: `url(${thinkSprite})`,
+              backgroundSize: "200% 100%",
+            }}
+          >
+          </div>
+        </div>
         <h2>{message}</h2>
         {waiting && <p>Retrying in {countDown}...</p>}
         <button onClick={handleRetry} disabled={waiting || retries === 3}>Try again</button>
