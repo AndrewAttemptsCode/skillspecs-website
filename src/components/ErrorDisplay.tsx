@@ -6,11 +6,11 @@ import thinkSprite from "../assets/images/sprites/think_sprite.webp";
 type ErrorProps = {
   error: string;
   retry: () => void;
+  retries: number;
 }
 
-const ErrorDisplay = ({ error, retry }: ErrorProps) => {
+const ErrorDisplay = ({ error, retry, retries }: ErrorProps) => {
   const navigate = useNavigate();
-  const [retries, setRetries] = useState(0);
   const [waiting, setWaiting] = useState(false);
   const [countDown, setCountDown] = useState(3);
 
@@ -31,7 +31,6 @@ const ErrorDisplay = ({ error, retry }: ErrorProps) => {
     if (retries >= 3) return;
 
     setWaiting(true);
-    setRetries((prev) => prev + 1);
     setCountDown(3);
 
     intervalRef.current = setInterval(() => {

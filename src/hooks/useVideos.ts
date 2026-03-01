@@ -15,6 +15,7 @@ const useVideos = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
+  const [retries, setRetries] = useState(0);
 
   useEffect(() => {
     const loadVideos = async () => {
@@ -23,6 +24,7 @@ const useVideos = () => {
         const data: Video[] = await fetchVideos();
         setVideos(data);
         setSelectedVideo(data[0]);
+        setRetries(0);
       } catch (err) {
         if (err instanceof Error) {
           console.error(err.message);
@@ -30,6 +32,7 @@ const useVideos = () => {
           console.error("Unknown Error:", err);
         }
         setError("Failed to fetch videos. Please try again.");
+        setRetries(prev => prev + 1);
       } finally {
         setLoading(false);
       }
@@ -45,7 +48,7 @@ const useVideos = () => {
     setReloadKey(prev => prev + 1);
   }
 
-  return { videos, selectedVideo, updateSelected, loading, error, retry };
+  return { videos, selectedVideo, updateSelected, loading, error, retry, retries };
 };
 
 export default useVideos;
