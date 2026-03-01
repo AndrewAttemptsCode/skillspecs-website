@@ -20,7 +20,7 @@ const SiteLayout = () => {
           orientation="horizontal"
         />
       </header>
-      <main className="flex-1 flex">
+      <main className="flex flex-1">
         <Outlet />
       </main>
       <footer></footer>

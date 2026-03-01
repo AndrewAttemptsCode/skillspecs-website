@@ -32,7 +32,7 @@ const useVideos = () => {
           console.error("Unknown Error:", err);
         }
         setError("Failed to fetch videos. Please try again.");
-        setRetries(prev => prev + 1);
+        setRetries((prev) => prev + 1);
       } finally {
         setLoading(false);
       }
@@ -45,10 +45,18 @@ const useVideos = () => {
   };
 
   const retry = () => {
-    setReloadKey(prev => prev + 1);
-  }
+    setReloadKey((prev) => prev + 1);
+  };
 
-  return { videos, selectedVideo, updateSelected, loading, error, retry, retries };
+  return {
+    videos,
+    selectedVideo,
+    updateSelected,
+    loading,
+    error,
+    retry,
+    retries,
+  };
 };
 
 export default useVideos;
