@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import bgError from "../assets/images/backgrounds/bg_error.webp";
 import thinkSprite from "../assets/images/sprites/think_sprite.webp";
 
 type ErrorProps = {
   error: string;
+  retry: () => void;
 }
 
-const ErrorDisplay = ({ error }: ErrorProps) => {
-  const location = useLocation();
+const ErrorDisplay = ({ error, retry }: ErrorProps) => {
   const navigate = useNavigate();
   const [retries, setRetries] = useState(0);
   const [waiting, setWaiting] = useState(false);
@@ -39,7 +39,7 @@ const ErrorDisplay = ({ error }: ErrorProps) => {
     }, 1000);
 
     timeoutRef.current = setTimeout(() => {
-      navigate(location.pathname);
+      retry();
       setWaiting(false);
 
       if (intervalRef.current) clearInterval(intervalRef.current);

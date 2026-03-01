@@ -14,10 +14,12 @@ const useVideos = () => {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [reloadKey, setReloadKey] = useState(0);
 
   useEffect(() => {
     const loadVideos = async () => {
       try {
+        setError(null);
         const data: Video[] = await fetchVideos();
         setVideos(data);
         setSelectedVideo(data[0]);
@@ -33,13 +35,17 @@ const useVideos = () => {
       }
     };
     loadVideos();
-  }, []);
+  }, [reloadKey]);
 
   const updateSelected = (videoDetails: Video) => {
     setSelectedVideo(videoDetails);
   };
 
-  return { videos, selectedVideo, updateSelected, loading, error };
+  const retry = () => {
+    setReloadKey(prev => prev + 1);
+  }
+
+  return { videos, selectedVideo, updateSelected, loading, error, retry };
 };
 
 export default useVideos;
