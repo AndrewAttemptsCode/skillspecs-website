@@ -46,9 +46,11 @@ const ErrorDisplay = ({ error }: ErrorProps) => {
     }, 3000);
   }
 
+  const buttonStyles = "cursor-pointer p-2 border-2 rounded-md border-emerald-600 font-semibold text-emerald-700 transition-colors duration-200 ease hover:not-disabled:bg-emerald-700 hover:not-disabled:text-amber-100 disabled:opacity-40 disabled:cursor-default outline-none focus-visible:ring-3 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparant";
+
   return (
     <div className="flex-1 flex justify-center items-center">
-      <section className="w-[90%] max-w-125 bg-amber-100">
+      <section className="w-[90%] max-w-125 bg-amber-100 rounded-md">
         <div
           className="relative aspect-video bg-size-[100%_100%] bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${bgError}), linear-gradient(to bottom, #ff000055, #ff0000)` }}
@@ -65,9 +67,23 @@ const ErrorDisplay = ({ error }: ErrorProps) => {
           >
           </div>
         </div>
-        <h2>{message}</h2>
-        {waiting && <p>Retrying in {countDown}...</p>}
-        <button onClick={handleRetry} disabled={waiting || retries === 3}>Try again</button>
+        <div className="pt-3 space-y-3 text-center">
+          <h2 className="text-balance font-semibold text-red-700 leading-none">{message}</h2>
+          {waiting && <p className="font-semibold text-emerald-800">Retrying in {countDown}...</p>}
+          <button
+            onClick={() => navigate("/")}
+            className={`mr-3 ${buttonStyles}`}
+          >
+            Home
+          </button>
+          <button
+            onClick={handleRetry}
+            disabled={waiting || retries === 3}
+            className={`${buttonStyles}`}
+          >
+            Try again
+          </button>
+        </div>
       </section>
     </div>
   );
