@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "./NavBar";
-import Logo from "./Logo";
 import useBackground from "../hooks/useBackground";
+import Header from "./Header";
 
 const SiteLayout = () => {
   const bg = useBackground();
@@ -13,12 +12,7 @@ const SiteLayout = () => {
         backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(${bg})`,
       }}
     >
-      <header className="relative flex p-4 justify-between items-center">
-        <Logo />
-        <NavBar
-          selectedItems={["/", "/videos", "/livestream", "/socials", "/about"]}
-        />
-      </header>
+      <Header />
       <main className="flex flex-1">
         <Outlet />
       </main>
