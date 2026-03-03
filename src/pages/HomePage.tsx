@@ -7,7 +7,7 @@ const HomePage = () => {
 
   return (
     <div
-      className="relative flex min-h-dvh justify-center bg-cover bg-center bg-no-repeat p-4 lg:justify-end"
+      className="relative flex p-4 min-h-dvh bg-cover bg-center bg-no-repeat justify-end"
       style={{
         backgroundImage: `
           url(${bg}),
@@ -23,7 +23,6 @@ const HomePage = () => {
     >
       <NavBar
         selectedItems={["/videos", "/livestream", "/socials", "/about"]}
-        orientation="horizontal"
       />
       <ThroneSprite />
     </div>
