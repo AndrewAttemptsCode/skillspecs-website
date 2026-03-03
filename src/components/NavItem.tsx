@@ -4,9 +4,10 @@ import type { NavListData } from "../data/NavList";
 
 type ItemProps = {
   item: NavListData;
+  navOpen: boolean;
 };
 
-const NavItem = ({ item }: ItemProps) => {
+const NavItem = ({ item, navOpen }: ItemProps) => {
   const { path, label, Icon, styles, active } = item;
   const location = useLocation();
 
@@ -17,7 +18,8 @@ const NavItem = ({ item }: ItemProps) => {
     <NavLink
       to={path}
       title={label}
-      className="group relative block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+      className={`group transition-transform duration-200 ease-linear block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${navOpen ? "translate-x-0" : "translate-x-[150%]"} lg:translate-x-0`}
+      tabIndex={navOpen ? 0 : -1}
     >
       <img
         src={stone}
