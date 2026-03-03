@@ -1,5 +1,7 @@
+import { useState } from "react";
 import navList from "../data/NavList";
 import NavItem from "./NavItem";
+import NavMenuButton from "./NavMenuButton";
 
 type Route = "/" | "/videos" | "/livestream" | "/socials" | "/about";
 
@@ -13,11 +15,14 @@ const NavBar = ({ selectedItems, orientation }: NavProps) => {
     ? navList.filter((item) => selectedItems.includes(item.path))
     : navList;
 
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <nav>
       <ul
         className={`flex gap-2 ${orientation === "vertical" ? "flex-col" : "flex-row"}`}
       >
+        <NavMenuButton navOpen={navOpen} updateNav={() => setNavOpen(prev => !prev)} />
         {list.map((item) => (
           <li key={item.id}>
             <NavItem item={item} />
