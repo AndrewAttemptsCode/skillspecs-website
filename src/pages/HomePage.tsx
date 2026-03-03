@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar";
+import ThroneSprite from "../components/ThroneSprite";
 import useBackground from "../hooks/useBackground";
 
 const HomePage = () => {
@@ -6,7 +7,7 @@ const HomePage = () => {
 
   return (
     <div
-      className="flex min-h-dvh justify-center bg-cover bg-center bg-no-repeat p-4 lg:justify-end"
+      className="relative flex min-h-dvh justify-center bg-cover bg-center bg-no-repeat p-4 lg:justify-end"
       style={{
         backgroundImage: `
           url(${bg}),
@@ -24,6 +25,7 @@ const HomePage = () => {
         selectedItems={["/videos", "/livestream", "/socials", "/about"]}
         orientation="horizontal"
       />
+      <ThroneSprite />
     </div>
   );
 };
