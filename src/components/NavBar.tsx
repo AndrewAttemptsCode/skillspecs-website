@@ -1,26 +1,21 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import navList from "../data/NavList";
 import NavItem from "./NavItem";
-import NavMenuButton from "./NavMenuButton";
-
-type Route = "/" | "/videos" | "/livestream" | "/socials" | "/about";
 
 type NavProps = {
-  selectedItems: Route[];
+  navOpen: boolean;
 };
 
-const NavBar = ({ selectedItems }: NavProps) => {
-  const list = selectedItems
-    ? navList.filter((item) => selectedItems.includes(item.path))
+const NavBar = ({ navOpen }: NavProps) => {
+  const location = useLocation();
+  const list = location.pathname === "/"
+    ? navList.filter((item) => item.path !== location.pathname)
     : navList;
 
-  const [navOpen, setNavOpen] = useState(false);
-
   return (
-    <nav className="relative">
-      <NavMenuButton navOpen={navOpen} updateNav={() => setNavOpen(prev => !prev)} />
+    <nav className="absolute lg:static right-0 top-full z-50 px-1 lg:px-0 overflow-x-hidden">
       <ul
-        className={`flex gap-2 p-3 lg:p-0 flex-col lg:flex-row fixed lg:static top-20 right-0 z-50 overflow-x-hidden overflow-y-auto max-h-[calc(100vh-10rem)]`}
+        className="lg:flex"
         aria-label="Navigation list"
         aria-hidden={!navOpen}
       >
