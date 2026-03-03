@@ -13,11 +13,10 @@ const SiteLayout = () => {
         backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url(${bg})`,
       }}
     >
-      <header className="flex flex-col items-center gap-2 p-2 sm:flex-row sm:justify-between sm:gap-0 sm:p-4">
+      <header className="relative flex p-4 justify-between items-center">
         <Logo />
         <NavBar
           selectedItems={["/", "/videos", "/livestream", "/socials", "/about"]}
-          orientation="horizontal"
         />
       </header>
       <main className="flex flex-1">
