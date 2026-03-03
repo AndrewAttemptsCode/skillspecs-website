@@ -4,6 +4,7 @@
 @theme {
   --font-heading: "Knewave", sans-serif;
   --animate-emote: 0.5s think steps(2) infinite;
+  --animate-throne: 2s throne steps(9) infinite;
 
   @keyframes think {
     from {
@@ -11,6 +12,15 @@
     }
     to {
       background-position: 200% 0%;
+    }
+  }
+
+  @keyframes throne {
+    from {
+      background-position: 0% 0%;
+    }
+    to {
+      background-position: 112.5% 0%;
     }
   }
 }
