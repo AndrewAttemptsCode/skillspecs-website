@@ -28,7 +28,7 @@ const NavItem = ({ item, navOpen }: ItemProps) => {
     <NavLink
       to={path}
       title={label}
-      className={`group lg:tabIndex-0 transition-transform duration-200 ease-linear block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${navOpen ? "translate-x-0" : "translate-x-[150%]"} lg:translate-x-0`}
+      className={`group relative transition-transform duration-200 ease-linear block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${navOpen ? "translate-x-0" : "translate-x-[120%]"} lg:translate-x-0`}
       tabIndex={tabOptions}
     >
       <img
@@ -36,7 +36,7 @@ const NavItem = ({ item, navOpen }: ItemProps) => {
         alt=""
         className={`w-16 group-hover:brightness-110 group-focus-visible:brightness-110 ${transitionClasses}`}
       />
-      <div className="absolute inset-0 flex items-center justify-center p-4">
+      <div className="absolute inset-0 p-4">
         <Icon
           className={`size-full group-hover:scale-110 ${transitionClasses} ${styles} ${selected ? active : ""} group-focus-visible:scale-110`}
         />
