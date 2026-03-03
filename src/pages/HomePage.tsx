@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+import Header from "../components/Header";
 import ThroneSprite from "../components/ThroneSprite";
 import useBackground from "../hooks/useBackground";
 
@@ -7,7 +7,7 @@ const HomePage = () => {
 
   return (
     <div
-      className="relative flex p-4 min-h-dvh bg-cover bg-center bg-no-repeat justify-end"
+      className="relative min-h-dvh bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `
           url(${bg}),
@@ -21,9 +21,7 @@ const HomePage = () => {
         `,
       }}
     >
-      <NavBar
-        selectedItems={["/videos", "/livestream", "/socials", "/about"]}
-      />
+      <Header />
       <ThroneSprite />
     </div>
   );
