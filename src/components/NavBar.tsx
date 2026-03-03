@@ -7,10 +7,9 @@ type Route = "/" | "/videos" | "/livestream" | "/socials" | "/about";
 
 type NavProps = {
   selectedItems: Route[];
-  orientation: "vertical" | "horizontal";
 };
 
-const NavBar = ({ selectedItems, orientation }: NavProps) => {
+const NavBar = ({ selectedItems }: NavProps) => {
   const list = selectedItems
     ? navList.filter((item) => selectedItems.includes(item.path))
     : navList;
@@ -18,14 +17,15 @@ const NavBar = ({ selectedItems, orientation }: NavProps) => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav>
+    <nav className="relative">
+      <NavMenuButton navOpen={navOpen} updateNav={() => setNavOpen(prev => !prev)} />
       <ul
-        className={`flex gap-2 ${orientation === "vertical" ? "flex-col" : "flex-row"}`}
+        className={`flex gap-2 p-4 lg:p-0 flex-col lg:flex-row fixed lg:static top-20 right-0 z-50 overflow-x-hidden overflow-y-auto max-h-[calc(100vh-10rem)]`}
+        aria-label="Navigation list"
       >
-        <NavMenuButton navOpen={navOpen} updateNav={() => setNavOpen(prev => !prev)} />
         {list.map((item) => (
           <li key={item.id}>
-            <NavItem item={item} />
+            <NavItem item={item} navOpen={navOpen} />
           </li>
         ))}
       </ul>
