@@ -20,11 +20,12 @@ const NavBar = ({ selectedItems }: NavProps) => {
     <nav className="relative">
       <NavMenuButton navOpen={navOpen} updateNav={() => setNavOpen(prev => !prev)} />
       <ul
-        className={`flex gap-2 p-4 lg:p-0 flex-col lg:flex-row fixed lg:static top-20 right-0 z-50 overflow-x-hidden overflow-y-auto max-h-[calc(100vh-10rem)]`}
+        className={`flex gap-2 p-3 lg:p-0 flex-col lg:flex-row fixed lg:static top-20 right-0 z-50 overflow-x-hidden overflow-y-auto max-h-[calc(100vh-10rem)]`}
         aria-label="Navigation list"
+        aria-hidden={!navOpen}
       >
         {list.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="p-1">
             <NavItem item={item} navOpen={navOpen} />
           </li>
         ))}
