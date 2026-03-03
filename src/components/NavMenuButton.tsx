@@ -9,11 +9,15 @@ type MenuProps = {
 const NavMenuButton = ({ navOpen, updateNav }: MenuProps) => {
   return (
     <button
-      aria-label="Navigation menu"
       aria-expanded={navOpen}
       onClick={updateNav}
       className="relative lg:hidden rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent transition-transform duration-200 ease-linear"
     >
+
+      <span className="sr-only">
+        {navOpen ? "Close" : "Open"} navigation menu
+      </span>
+
       <img
         src={stone} alt=""
         className="w-16"
