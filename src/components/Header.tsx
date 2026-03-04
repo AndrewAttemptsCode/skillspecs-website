@@ -14,7 +14,7 @@ const Header = () => {
     <header className={`relative p-2 flex items-center ${pathName === "/" ? "justify-end" : "justify-between"}`}>
       {pathName !== "/" && <Logo />}
       <NavMenuButton navOpen={navOpen} updateNav={() => setNavOpen(prev => !prev)} />
-      <NavBar navOpen={navOpen} />
+      <NavBar navOpen={navOpen} closeNav={() => setNavOpen(false)} />
     </header>
   );
 };

@@ -4,9 +4,10 @@ import NavItem from "./NavItem";
 
 type NavProps = {
   navOpen: boolean;
+  closeNav: () => void;
 };
 
-const NavBar = ({ navOpen }: NavProps) => {
+const NavBar = ({ navOpen, closeNav }: NavProps) => {
   const location = useLocation();
   const list = location.pathname === "/"
     ? navList.filter((item) => item.path !== location.pathname)
@@ -21,7 +22,7 @@ const NavBar = ({ navOpen }: NavProps) => {
       >
         {list.map((item) => (
           <li key={item.id} className="p-1">
-            <NavItem item={item} navOpen={navOpen} />
+            <NavItem item={item} navOpen={navOpen} closeNav={closeNav} />
           </li>
         ))}
       </ul>

@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 type ItemProps = {
   item: NavListData;
   navOpen: boolean;
+  closeNav: () => void;
 };
 
-const NavItem = ({ item, navOpen }: ItemProps) => {
+const NavItem = ({ item, navOpen, closeNav }: ItemProps) => {
   const { path, label, Icon, styles, active } = item;
   const location = useLocation();
   const [isDesktop, setIsDesktop] = useState<boolean>(window.innerWidth >= 1024);
@@ -30,6 +31,7 @@ const NavItem = ({ item, navOpen }: ItemProps) => {
       title={label}
       className={`group relative transition-transform duration-200 ease-linear block rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${navOpen ? "translate-x-0" : "translate-x-[120%]"} lg:translate-x-0`}
       tabIndex={tabOptions}
+      onClick={closeNav}
     >
       <img
         src={stone}
