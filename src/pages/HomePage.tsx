@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import ThroneSprite from "../components/ThroneSprite";
+import VengeanceSprite from "../components/VengeanceSprite";
 import useBackground from "../hooks/useBackground";
 
 const HomePage = () => {
@@ -23,6 +24,7 @@ const HomePage = () => {
     >
       <Header />
       <ThroneSprite />
+      <VengeanceSprite />
     </div>
   );
 };
