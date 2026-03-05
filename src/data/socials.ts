@@ -71,7 +71,7 @@ const socials: SocialData[] = [
   {
     id: 7,
     label: "Kick",
-    path: "https://wwww.kick.com/skillspecs",
+    path: "https://www.kick.com/skillspecs",
     Icon: SiKick,
     description: "Description about Kick channel",
     styles: ""
