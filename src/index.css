@@ -5,6 +5,7 @@
   --font-heading: "Knewave", sans-serif;
   --animate-emote: 0.5s think steps(2) infinite;
   --animate-throne: 2s throne steps(9) infinite;
+  --animate-skull: 4s skull steps(21) forwards, 4s skullFade linear forwards;
 
   @keyframes think {
     from {
@@ -21,6 +22,30 @@
     }
     to {
       background-position: 112.5% 0%;
+    }
+  }
+
+  @keyframes skull {
+    from {
+      background-position: 0% 0%;
+    }
+    to {
+      background-position: 105% 0%;
+    }
+  }
+
+  @keyframes skullFade {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    98% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
     }
   }
 }
