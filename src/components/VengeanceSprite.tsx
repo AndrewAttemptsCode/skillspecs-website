@@ -41,4 +41,3 @@ const VengeanceSprite = () => {
 };
 
 export default VengeanceSprite;
-// 10% full
