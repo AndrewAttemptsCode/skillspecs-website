@@ -1,5 +1,9 @@
+import SocialsList from "../components/SocialsList";
+
 const SocialsPage = () => {
-  return <div>socials page</div>;
+  return (
+    <SocialsList />
+  )
 };
 
 export default SocialsPage;
