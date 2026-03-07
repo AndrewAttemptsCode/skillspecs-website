@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import useBackground from "../hooks/useBackground";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const SiteLayout = () => {
   const bg = useBackground();
@@ -16,7 +17,7 @@ const SiteLayout = () => {
       <main className="flex flex-1">
         <Outlet />
       </main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 };
