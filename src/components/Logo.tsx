@@ -6,7 +6,7 @@ const Logo = () => {
     <NavLink
       to={"/"}
       title="Home"
-      className="relative flex flex-col aspect-[21 / 9] h-16 justify-end rounded-md py-1 px-4 outline-none focus-visible:ring-2 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+      className="relative flex flex-col aspect-[21 / 9] h-16 justify-end rounded-md py-1 px-4 outline-none focus-visible:ring-2 focus-visible:ring-[#7FBF3F] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent overflow-hidden"
       style={{ 
         backgroundImage: "linear-gradient(to bottom, rgba(154, 231, 76, 0.8), rgba(30, 46, 13, 0.8))" 
       }}
