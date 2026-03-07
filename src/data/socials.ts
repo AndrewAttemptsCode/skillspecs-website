@@ -2,7 +2,7 @@ import type { IconType } from "react-icons";
 import { FaDiscord, FaFacebook, FaInstagram, FaTiktok, FaTwitch, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { SiKick } from "react-icons/si";
 
-type SocialData = {
+export type SocialData = {
   id: number;
   label: string;
   path: string;
