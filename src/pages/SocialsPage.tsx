@@ -2,7 +2,9 @@ import SocialsList from "../components/SocialsList";
 
 const SocialsPage = () => {
   return (
-    <SocialsList />
+    <div className="flex-1">
+      <SocialsList />
+    </div>
   )
 };
 
