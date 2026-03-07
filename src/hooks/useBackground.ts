@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
 import bgHome from "../assets/images/backgrounds/bg_arch_bounty_hunter.webp";
 import bgVideos from "../assets/images/backgrounds/bg_bounty_hunter.webp";
+import bgSocials from "../assets/images/backgrounds/bg_ge.webp";
+import bgAbout from "../assets/images/backgrounds/bg_valley.webp";
 
 type Routes = "/" | "/videos" | "/livestream" | "/socials" | "/about";
 
@@ -12,8 +14,8 @@ const useBackground = () => {
     "/": bgHome,
     "/videos": bgVideos,
     "/livestream": bgVideos,
-    "/socials": bgVideos,
-    "/about": bgVideos,
+    "/socials": bgSocials,
+    "/about": bgAbout,
   };
 
   return backgrounds[pathname as Routes] || "";
