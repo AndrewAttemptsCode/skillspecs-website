@@ -1,4 +1,5 @@
 import idle from "../assets/images/sprites/idle.png";
+import Contact from "./Contact";
 
 const Bio = () => {
   return (
@@ -18,6 +19,7 @@ const Bio = () => {
           <p>
             A big part of what I do is streaming my PKing live, sharing the action, challenges, and unpredictable moments from the Wilderness with the community.
           </p>
+          <Contact />
         </div>
       </section>
     </div>
