@@ -1,5 +1,11 @@
+import Bio from "../components/Bio";
+
 const AboutPage = () => {
-  return <div>about page</div>;
+  return (
+    <div className="flex-1 self-center">
+      <Bio />
+    </div>
+  );
 };
 
 export default AboutPage;
