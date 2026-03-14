@@ -1,5 +1,6 @@
 import idle from "../assets/images/sprites/idle.png";
 import Contact from "./Contact";
+import bg from "../assets/images/backgrounds/bg_parchment.jpg";
 
 const Bio = () => {
   return (
@@ -9,7 +10,10 @@ const Bio = () => {
           src={idle} alt=""
           className="mx-auto w-1/4"
         />
-        <div className="space-y-4 p-4 bg-amber-50/70 text-green-950 rounded-md border-4 border-amber-700">
+        <div 
+          className="space-y-4 p-4 bg-amber-50 text-green-950 rounded-md border-4 border-amber-700 bg-no-repeat bg-cover bg-bottom"
+          style={{ backgroundImage: `url(${bg})` }}
+        >
           <p>
             Hey, I’m Skill Specs, an Old School RuneScape content creator mainly focused on PvP content. Most of my content revolves around the excitement of PvP combat, experimenting with different PK builds, and taking on PK-focused challenges.
           </p>
