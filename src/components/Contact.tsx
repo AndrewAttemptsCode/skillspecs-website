@@ -20,7 +20,7 @@ const Contact = () => {
           <a
             key={contact.id}
             href={`mailto:${contact.email}`}
-            className="w-fit rounded-md bg-amber-700 p-2 font-semibold text-amber-50 outline-0 transition-all duration-300 ease-in-out hover:brightness-110 focus-visible:ring-2 focus-visible:ring-amber-900"
+            className="w-fit rounded-md from-amber-600 to-amber-700 bg-linear-to-t p-2 font-semibold text-amber-50 outline-0 transition-all duration-300 ease-in-out hover:brightness-110 focus-visible:ring-2 focus-visible:ring-amber-900"
           >
             {contact.title}
           </a>
